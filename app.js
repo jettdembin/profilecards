@@ -1,4 +1,4 @@
-const heading = 'Please Meet Our Team';
+const heading = 'Where Success is Born';
 let i = 0;
 
 const typing = () => {
