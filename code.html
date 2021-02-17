@@ -1,0 +1,349 @@
+<!--
+
+********************************************************************  THIS IS THE HTML  *******************************************************************************************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600|Montserrat:300,300i,400,400i,500,500i,600,600i,700|Ubuntu:300,300i,400,400i,500,500i,700" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <title>Profile Cards</title>
+</head>
+<body>
+   <div class="container">
+      <div class="heading"></div>
+      
+      <div class="cards-wrapper">
+         <div class="card">
+            <img src="images/pf3.jpg" class="image-top">
+            <img src="images/bg.jpg" class="profile-image">
+            <h1 class="fullname">Jane Smith</h1>
+            <p class="job">Web Designer</p>
+            <p class="about-me">"This is filler text."</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+               <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+         </div>
+         <div class="card">
+            <img src="images/pf2.jpg" class="image-top">
+            <img src="images/bg.jpg" class="profile-image">
+            <h1 class="fullname">Jett Dembin</h1>
+            <p class="job">Web Developer</p>
+            <p class="about-me">"This is filler text."</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+               <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+         </div>
+         <div class="card">
+            <img src="images/pf1.jpg" class="image-top">
+            <img src="images/bg.jpg" class="profile-image">
+            <h1 class="fullname">Jason Law</h1>
+            <p class="job">Graphic Designer</p>
+            <p class="about-me">"This is filler text."</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+               <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <script src="app.js"></script>
+</body>
+</html>
+
+********************************************************************  THIS IS THE CSS  ********************************************************************************************
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .1)), url(images/bg.jpg) center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.heading {
+    color: #fff;
+    font-size: 70px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-variant: small-caps;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 5px;
+    text-align: center;
+    white-space: pre-wrap;
+    z-index: 10000;
+}
+
+@keyframes blinking {
+    0% {background-color: #fff}
+    50% {background-color: transparent}
+    100% {background-color: #fff}
+}
+
+.heading::after {
+    content: '';
+    width: 5px;
+    height: 55px;
+    background-color: #fff;
+    position: absolute;
+    animation: blinking 1s 3s infinite;
+}
+
+.cards-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card {
+    width: 280px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform .5s;
+}
+
+@keyframes cardAnim {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.card:nth-child(1) {
+    animation: cardAnim 2s 3s backwards; 
+}
+
+.card:nth-child(2) {
+    animation: cardAnim 2s 3.5s backwards; 
+}
+
+.card:nth-child(3) {
+    animation: cardAnim 2s 4s backwards; 
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.image-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -110px;
+    z-index: 1;
+    border: 10px solid #fff;
+}
+
+.card h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: #555;
+    margin: 10px;
+}
+
+.job {
+    font-family: 'Montserrat', sans-serif;
+    color: #777;
+    font-weight: 300;
+}
+
+.about-me {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    width: 90%;
+    margin: 15px 0;
+    font-style: italic;
+    color: #444;
+    text-align: center;
+}
+
+.card button {
+    width: 120px;
+    padding: 7px;
+    margin: 10px 0;
+    background-color: tomato;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
+    transition: transform .1s;
+}
+
+.card:hover button {
+    animation: buttonRotation 2s 1s linear;
+}
+
+@keyframes buttonRotation {
+    0%{transform: scale(1) rotateZ(0)}
+    5%{transform: scale(1.2) rotateZ(5deg)}
+    10%{transform: scale(1.2) rotateZ(-5deg)}
+    15%{transform: scale(1.2) rotateZ(5deg)}
+    20%{transform: scale(1.2) rotateZ(-5deg)}
+    25%{transform: scale(1.2) rotateZ(5deg)}
+    30%{transform: scale(1.2) rotateZ(-5deg)}
+    35%{transform: scale(1.2) rotateZ(5deg)}
+    40%{transform: scale(1.2) rotateZ(-5deg)}
+    45%{transform: scale(1.2) rotateZ(5deg)}
+    50%{transform: scale(1.2) rotateZ(-5deg)}
+    55%{transform: scale(1.2) rotateZ(5deg)}
+    60%{transform: scale(1.2) rotateZ(-5deg)}
+    65%{transform: scale(1.2) rotateZ(5deg)}
+    70%{transform: scale(1.2) rotateZ(-5deg)}
+    75%{transform: scale(1.2) rotateZ(5deg)}
+    80%{transform: scale(1.2) rotateZ(-5deg)}
+    85%{transform: scale(1.2) rotateZ(5deg)}
+    90%{transform: scale(1.2) rotateZ(-5deg)}
+    95%{transform: scale(1.2) rotateZ(5deg)}
+    100%{transform: scale(1) rotateZ(0)}
+}
+
+.social-icons {
+    width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding-top: 20px;
+    margin: 10px 0 20px 0;
+    border-top: 1px solid #999;
+}
+
+.social-icons i {
+    font-size: 18px;
+}
+
+.fa-youtube {
+    color: #cd201f;
+}
+
+.fa-twitter {
+    color: #55acee;
+}
+
+.fa-google-plus-g {
+    color: #dd4b39;
+}
+
+.fa-facebook-f {
+    color: #3b5999;
+}
+
+@media(max-width: 1300px) {
+    .heading {
+        font-size: 65px;
+        width: 80%;
+    }
+
+    .cards-wrapper {
+        width: 100%;
+        top: 32%;
+    }
+
+    .card {
+        margin: 0 30px 50px 30px;
+    }
+
+    .image-top {
+        height: 200px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .container {
+        height: 100%;
+    }
+
+    .heading {
+        width: 90%;
+    }
+
+    .cards-wrapper {
+        flex-wrap: wrap;
+        padding: 300px 0 200px 0;
+    }
+
+    .card {
+        margin: 0 30px 50px 30px;
+    }
+}
+
+@media(max-width: 700px) {
+    .heading {
+        font-size: 50px;
+    }
+
+    .heading::after {
+        height: 40px;
+    }
+}
+
+@media(max-width: 450px) {
+    .heading {
+        font-size: 35px;
+    }
+
+    .heading::after {
+        height: 28px;
+        width: 3px;
+    }
+
+    .cards-wrapper {
+        padding: 250px 0 100px 0;
+        margin-top: -30px;
+    }
+}
+
+********************************************************************  THIS IS THE JAVASCRIPT  *************************************************************************************
+
+const heading = 'Please Meet Our Team';
+let i = 0;
+
+const typing = () => {
+    if (i < heading.length) {
+        document.querySelector('.heading').innerHTML += heading.charAt(i);
+        i++;
+
+        setTimeout(typing, 120);
+    }
+};
+
+typing();
+
+-->
